@@ -14,6 +14,8 @@ func TestThing(t *testing.T) {
 	n = a
 	assert.Nil(t, Thing(&n))
 
+	a.AssertNumberOfCalls(t, "Send", 1)
+
 }
 
 func TestThing2(t *testing.T) {
