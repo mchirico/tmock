@@ -11,19 +11,15 @@ func TestThing(t *testing.T) {
 
 	a := &NotifierMock{}
 	a.On("Send", "string").Return(nil)
-
 	n = a
-
 	assert.Nil(t, Thing(&n))
 
 }
 
 func TestThing2(t *testing.T) {
-
 	a := &NotifierMock{}
 	a.On("Send", "string").Return(nil)
 	assert.Nil(t, Thing2(a))
-
 }
 
 // Mock for notification testing
