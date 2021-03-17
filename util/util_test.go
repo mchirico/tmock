@@ -9,12 +9,20 @@ import (
 func TestThing(t *testing.T) {
 	var n Notifier
 
-	a := NotifierMock{}
+	a := &NotifierMock{}
 	a.On("Send", "string").Return(nil)
 
-	n = &a
+	n = a
 
 	assert.Nil(t, Thing(&n))
+
+}
+
+func TestThing2(t *testing.T) {
+
+	a := &NotifierMock{}
+	a.On("Send", "string").Return(nil)
+	assert.Nil(t, Thing2(a))
 
 }
 
